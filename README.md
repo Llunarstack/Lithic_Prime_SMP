@@ -180,7 +180,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 🌐 **Website:** [lithicprime.com](https://llunarstack.github.io/Lithic_Prime_SMP/)
 - 🎮 **Server:** `play.lithicprime.com`
 - 💬 **Discord:** [Join our community](#) *(coming soon)*
-- 📧 **Email:** [contact@lithicprime.com](#) *(coming soon)*
 
 ---
 
