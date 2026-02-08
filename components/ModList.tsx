@@ -36,7 +36,7 @@ export const ModList = memo(() => {
     return (
         <div id="modlist" className="max-w-[1400px] mx-auto px-4 py-16 relative z-10">
             
-            <div className="mb-8 sm:mb-12 text-center">
+            <div className="mb-8 sm:mb-12 text-center select-none">
                 <h2 className="font-pixel text-3xl sm:text-4xl md:text-5xl text-white mb-2 drop-shadow-[4px_4px_0_#000]">Mod Collection</h2>
                 <div className="inline-block bg-[#333] border-2 border-[#111] px-3 sm:px-4 py-1 text-[#aaa] font-pixel text-base sm:text-xl">
                     Library Version 1.21.11
@@ -69,13 +69,13 @@ export const ModList = memo(() => {
                              <label className="block text-[#aaa] font-pixel text-lg mb-2 uppercase tracking-wide">Filter by Importance</label>
                              <div className="flex flex-wrap gap-3">
                                 <PixelButton onClick={() => setFilterType('all')} isActive={filterType === 'all'}>
-                                    ALL MODS
+                                    ALL MODS (274)
                                 </PixelButton>
                                 <PixelButton onClick={() => setFilterType('mandatory')} isActive={filterType === 'mandatory'}>
-                                    MANDATORY ({mandatoryMods.length})
+                                    MANDATORY (245)
                                 </PixelButton>
                                 <PixelButton onClick={() => setFilterType('optional')} isActive={filterType === 'optional'}>
-                                    OPTIONAL ({optionalMods.length})
+                                    OPTIONAL (29)
                                 </PixelButton>
                             </div>
                         </div>
@@ -108,13 +108,24 @@ export const ModList = memo(() => {
             {/* Content Sections */}
             <div className="space-y-16">
                 
+                {/* All Mods Header - only show when filterType is 'all' */}
+                {filterType === 'all' && (mandatoryMods.length > 0 || optionalMods.length > 0) && (
+                    <div className="flex items-center gap-4 mb-6 select-none">
+                        <div className="h-1 flex-grow bg-[#003300] border-b border-[#000]"></div>
+                        <h3 className="font-pixel text-3xl text-[#55FF55] uppercase tracking-widest bg-[#121212] px-4 border-2 border-[#003300] drop-shadow-[0_0_10px_rgba(85,255,85,0.5)]">All Mods</h3>
+                        <div className="h-1 flex-grow bg-[#003300] border-b border-[#000]"></div>
+                    </div>
+                )}
+                
                 {showMandatory && mandatoryMods.length > 0 && (
                     <section>
-                        <div className="flex items-center gap-4 mb-6">
-                            <div className="h-1 flex-grow bg-[#333] border-b border-[#000]"></div>
-                            <h3 className="font-pixel text-3xl text-[#AAAAAA] uppercase tracking-widest bg-[#121212] px-4 border-2 border-[#333]">Mandatory Mods</h3>
-                            <div className="h-1 flex-grow bg-[#333] border-b border-[#000]"></div>
-                        </div>
+                        {filterType !== 'all' && (
+                            <div className="flex items-center gap-4 mb-6 select-none">
+                                <div className="h-1 flex-grow bg-[#330000] border-b border-[#000]"></div>
+                                <h3 className="font-pixel text-3xl text-[#FF5555] uppercase tracking-widest bg-[#121212] px-4 border-2 border-[#330000] drop-shadow-[0_0_10px_rgba(255,85,85,0.5)]">Mandatory Mods</h3>
+                                <div className="h-1 flex-grow bg-[#330000] border-b border-[#000]"></div>
+                            </div>
+                        )}
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                             {mandatoryMods.map(mod => (
                                 <ModCard key={mod.id} mod={mod} />
@@ -125,12 +136,14 @@ export const ModList = memo(() => {
 
                 {showOptional && optionalMods.length > 0 && (
                     <section>
-                        <div className="flex items-center gap-4 mb-6 mt-12">
-                            <div className="h-1 flex-grow bg-[#003366] border-b border-[#000]"></div>
-                            <h3 className="font-pixel text-3xl text-[#55FFFF] uppercase tracking-widest bg-[#121212] px-4 border-2 border-[#003366]">Optional Mods</h3>
-                            <div className="h-1 flex-grow bg-[#003366] border-b border-[#000]"></div>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {filterType !== 'all' && (
+                            <div className="flex items-center gap-4 mb-6 mt-12 select-none">
+                                <div className="h-1 flex-grow bg-[#003366] border-b border-[#000]"></div>
+                                <h3 className="font-pixel text-3xl text-[#55FFFF] uppercase tracking-widest bg-[#121212] px-4 border-2 border-[#003366] drop-shadow-[0_0_10px_rgba(85,255,255,0.5)]">Optional Mods</h3>
+                                <div className="h-1 flex-grow bg-[#003366] border-b border-[#000]"></div>
+                            </div>
+                        )}
+                        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ${filterType === 'all' ? 'mt-12' : ''}`}>
                             {optionalMods.map(mod => (
                                 <ModCard key={mod.id} mod={mod} />
                             ))}
@@ -139,7 +152,7 @@ export const ModList = memo(() => {
                 )}
 
                 {mandatoryMods.length === 0 && optionalMods.length === 0 && (
-                    <div className="text-center py-20">
+                    <div className="text-center py-20 select-none">
                         <h3 className="font-pixel text-4xl text-[#555] mb-4">No Mods Found</h3>
                         <p className="text-[#777]">Try adjusting your search filters.</p>
                     </div>

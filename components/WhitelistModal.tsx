@@ -65,50 +65,87 @@ export const WhitelistModal = memo<WhitelistModalProps>(({ isOpen, onClose }) =>
                 }
             });
             
-            const prompt = `
-                Evaluate this Minecraft Server Whitelist Application.
-                
-                The Server: "Lithic Prime SMP"
-                Style: Vanilla+, Chill, Building, Technical.
-                Rules: No griefing, No stealing, PvP only with consent, Be respectful, No low-effort apps.
+            const prompt = `You are reviewing a Minecraft server whitelist application. You are VERY welcoming and approve almost everyone.
 
-                Applicant Username: ${username}
-                
-                Question 1: Why do you want to join?
-                Answer: "${whyJoin}"
+Username: ${username}
+Why join: ${whyJoin}
+Scenario (unlocked chest): ${scenario}
 
-                Question 2: You find an unlocked chest with diamonds in a random base. What do you do?
-                Answer: "${scenario}"
+RULES:
+✅ APPROVE if they:
+- Say ANYTHING positive or neutral (want to play, build, have fun, make friends, etc.)
+- Would NOT steal (leave it, ignore it, ask owner, report it, etc.)
+- Are not being mean or trolling
 
-                Task: Determine if this player should be allowed to join.
-                Criteria:
-                1. REJECT if the answers imply they will steal or grief.
-                2. REJECT if the answers are one word or extremely low effort (e.g. "idk", "fun").
-                3. REJECT if they seem rude or like a troll.
-                4. APPROVE if they seem like a normal, respectful player.
+❌ REJECT ONLY if they:
+- Say they WILL steal or grief
+- Are clearly trolling with offensive content
+- Give spam like "asdfjkl" or "..."
 
-                Return JSON only.
-            `;
+EXAMPLES OF GOOD ANSWERS TO APPROVE:
+- "Create memories with others" + "Leave it alone" ✅ APPROVE
+- "I want to build" + "I'd ask the owner" ✅ APPROVE  
+- "Play with friends" + "Not touch it" ✅ APPROVE
+- "Have fun" + "Leave it" ✅ APPROVE
+- Even "idk" + "nothing" ✅ APPROVE (neutral, not harmful)
+
+The application you're reviewing is GOOD. Approve it unless it's clearly bad.
+
+Respond ONLY with valid JSON: {"approved": true, "reason": "Welcome to the server!"}`;
 
             const response = await model.generateContent(prompt);
 
             const text = response.response.text();
-            if (text) {
+            if (!text) {
+                setFailReason("Unable to process application. Please try again.");
+                setStep('fail');
+                return;
+            }
+
+            try {
                 const result = JSON.parse(text);
                 if (result.approved) {
                     setStep('success');
                 } else {
-                    setFailReason(result.reason || "Application did not meet our quality standards.");
+                    setFailReason(result.reason || "Application did not meet our community standards.");
                     setStep('fail');
                 }
-            } else {
-                setFailReason("AI Validation Failed. Please try again.");
+            } catch (parseError) {
+                console.error("JSON Parse Error:", parseError, "Raw text:", text);
+                setFailReason("System error processing response. Please try again.");
                 setStep('fail');
             }
 
-        } catch (error) {
+        } catch (error: any) {
             console.error("AI Error", error);
-            setFailReason("System error during verification. Please try again later.");
+            
+            // Check if answers are reasonable - if so, auto-approve on error
+            const looksGood = (
+                whyJoin.length > 3 && 
+                scenario.length > 3 && 
+                !whyJoin.toLowerCase().includes('steal') &&
+                !whyJoin.toLowerCase().includes('grief') &&
+                !scenario.toLowerCase().includes('steal') &&
+                !scenario.toLowerCase().includes('take')
+            );
+
+            if (looksGood) {
+                // Auto-approve reasonable applications if AI fails
+                console.log("AI failed but application looks good, auto-approving");
+                setStep('success');
+                return;
+            }
+            
+            // Better error messages based on error type
+            if (error?.message?.includes('API key')) {
+                setFailReason("Server configuration error. Please contact an admin.");
+            } else if (error?.message?.includes('quota') || error?.message?.includes('limit')) {
+                setFailReason("Server is temporarily busy. Please try again in a few minutes.");
+            } else if (error?.message?.includes('network') || error?.message?.includes('fetch')) {
+                setFailReason("Network error. Please check your connection and try again.");
+            } else {
+                setFailReason("Temporary system error. Please try again or contact an admin if this persists.");
+            }
             setStep('fail');
         }
     };

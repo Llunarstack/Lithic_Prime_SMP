@@ -91,7 +91,7 @@ const knownMods: Record<string, { name?: string, description?: string, category?
     "comforts": { name: "Comforts", description: "Sleeping bags and hammocks for portable sleeping.", category: ModCategory.CONTENT },
     "connectedglass": { name: "Connected Glass", description: "Adds connected textures to glass blocks.", category: ModCategory.VISUAL },
     "continuity": { name: "Continuity", description: "Fabric mod for efficient connected textures.", category: ModCategory.VISUAL, isOptional: true },
-    "create-fly": { name: "Create: Icarus", description: "Adds wings and flight mechanics to Create.", category: ModCategory.CONTENT },
+    "create-fly": { name: "Create Fly", description: "Adds wings and flight mechanics to Create.", category: ModCategory.CONTENT },
     "dark-loading-screen": { name: "Dark Loading Screen", description: "Makes the loading screen darker.", category: ModCategory.VISUAL, isOptional: true },
     "dungeons-and-taverns": { name: "Dungeons & Taverns", description: "Adds new structures and dungeons.", category: ModCategory.WORLD_GEN },
     "easymagic": { name: "Easy Magic", description: "Enchanting tables retain inventory and more.", category: ModCategory.QOL },
@@ -199,18 +199,15 @@ const analyzeMod = (filename: string): Omit<Mod, 'id'> => {
     // 1. Remove file extension
     let name = filename.replace(/\.jar$|\.zip$/i, '');
     
-    // 2. Remove common version patterns from end of string (e.g., -1.21.1, -fabric-2.3)
-    // This looks for a hyphen followed by numbers/dots at the end
-    name = name.replace(/-[0-9]+(\.[0-9]+)*.*$/, '');
+    // 2. Remove common version patterns and extra info (e.g., -1.21.1, -fabric-2.3, _FABRIC_v2.14.9_MC_1.21.11)
+    // Remove everything after first version number or fabric/forge indicator
+    name = name.replace(/[-_](v?[0-9]+(\.[0-9]+)+|fabric|forge|mc).*$/i, '');
     
-    // 3. Remove "fabric" or "forge" if they appear as suffixes or prefixes
-    name = name.replace(/[-_](fabric|forge)[-_]?/g, ' ');
-
-    // 4. Remove leading version numbers (e.g. "1.3.5-backpacks" -> "backpacks")
+    // 3. Remove leading version numbers (e.g. "1.3.5-backpacks" -> "backpacks")
     name = name.replace(/^[0-9]+(\.[0-9]+)*[-_]/, '');
 
-    // 5. Clean up delimiters
-    name = name.replace(/[-_]/g, ' ').trim();
+    // 4. Clean up delimiters and extra spaces
+    name = name.replace(/[-_]/g, ' ').replace(/\s+/g, ' ').trim();
 
     // Default values
     let description = "A useful addition to the modpack.";

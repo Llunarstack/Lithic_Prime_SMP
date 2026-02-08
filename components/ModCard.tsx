@@ -89,12 +89,12 @@ export const ModCard = memo<ModCardProps>(({ mod }) => {
                          </div>
                     </div>
 
-                    <div className="flex flex-col justify-center min-w-0">
-                        <h3 className="font-pixel text-2xl text-white leading-none mb-1 truncate drop-shadow-md tracking-wide group-hover:text-[#FFFF55] transition-colors">
+                    <div className="flex flex-col justify-center min-w-0 flex-1">
+                        <h3 className="font-pixel text-2xl text-white leading-none mb-1 drop-shadow-md tracking-wide group-hover:text-[#FFFF55] transition-colors break-words select-none">
                             {mod.name}
                         </h3>
                         <div className="flex items-center gap-2">
-                             <span className="text-xs font-bold text-[#AAAAAA] uppercase tracking-wider bg-black/30 px-1.5 py-0.5 rounded border border-[#333]">
+                             <span className="text-xs font-bold text-[#AAAAAA] uppercase tracking-wider bg-black/30 px-1.5 py-0.5 rounded border border-[#333] select-none">
                                 {mod.category.split(' ')[0]}
                             </span>
                         </div>
@@ -103,7 +103,7 @@ export const ModCard = memo<ModCardProps>(({ mod }) => {
 
                 {/* Description */}
                 <div className="flex-grow mb-4">
-                    <p className="text-[#D0D0D0] text-sm leading-snug line-clamp-3 font-medium opacity-90 group-hover:opacity-100">
+                    <p className="text-[#D0D0D0] text-sm leading-snug line-clamp-3 font-medium opacity-90 group-hover:opacity-100 select-none">
                         {fetchedDesc || mod.description}
                     </p>
                 </div>
@@ -117,15 +117,16 @@ export const ModCard = memo<ModCardProps>(({ mod }) => {
                     </a>
 
                     {/* Footer - Tag Only, aligned right */}
-                    <div className="pt-3 border-t-2 border-[#333] flex justify-end items-center">
+                    <div className="pt-3 border-t-2 border-[#333] flex justify-end items-center select-none">
                         {mod.isOptional ? (
                             <div className="bg-[#003366] border border-[#0055aa] px-2 py-0.5 flex items-center gap-1 shadow-sm">
                                 <span className="w-1.5 h-1.5 bg-[#55FFFF] rounded-full animate-pulse"></span>
                                 <span className="text-[10px] text-[#55FFFF] font-bold uppercase tracking-wider">Optional</span>
                             </div>
                         ) : (
-                             <div className="px-2 py-0.5 bg-[#333] border border-[#555]">
-                                <span className="text-[10px] text-[#ddd] font-bold uppercase tracking-wider">Mandatory</span>
+                             <div className="px-2 py-0.5 bg-[#330000] border border-[#550000] flex items-center gap-1 shadow-sm">
+                                <span className="w-1.5 h-1.5 bg-[#FF5555] rounded-full animate-pulse"></span>
+                                <span className="text-[10px] text-[#FF5555] font-bold uppercase tracking-wider drop-shadow-[0_0_4px_rgba(255,85,85,0.5)]">Mandatory</span>
                             </div>
                         )}
                     </div>

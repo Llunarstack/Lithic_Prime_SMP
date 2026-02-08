@@ -10,17 +10,12 @@ interface DownloadModalProps {
 export const DownloadModal = memo(({ isOpen, onClose }: DownloadModalProps) => {
     const handleDownload = useCallback((type: 'full' | 'mandatory' | 'optional') => {
         const urls = {
-            full: '/downloads/LithicPrime-FullPack.zip',
-            mandatory: '/downloads/LithicPrime-Mandatory.zip',
-            optional: '/downloads/LithicPrime-Optional.zip'
+            full: 'https://mega.nz/file/vBVzHYZS#MuUzhn55dI9PBjOTfaKSmVH699TkhSLDL8ljlBhZwyU',
+            mandatory: 'https://mega.nz/file/DcVzgCqR#cZ36tTnfJDxupHOjb6Mq5pxbiCRHArGhVZ_twh8pObY',
+            optional: 'https://mega.nz/file/7d0iXSwC#2HioNptZgWJoqAdGO3V616vWkNmLExPsPqeYSFiWo9Q'
         };
         
-        const link = document.createElement('a');
-        link.href = urls[type];
-        link.download = urls[type].split('/').pop() || 'download.zip';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        window.open(urls[type], '_blank');
     }, []);
 
     if (!isOpen) return null;
@@ -64,7 +59,7 @@ export const DownloadModal = memo(({ isOpen, onClose }: DownloadModalProps) => {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">ALL MODS</span>
-                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">274 MODS</span>
+                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">245 MANDATORY + 29 OPTIONAL</span>
                                 </div>
                                 <PixelButton 
                                     onClick={() => handleDownload('full')}
@@ -90,7 +85,7 @@ export const DownloadModal = memo(({ isOpen, onClose }: DownloadModalProps) => {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">REQUIRED</span>
-                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">247 MODS</span>
+                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">245 MODS</span>
                                 </div>
                                 <PixelButton 
                                     onClick={() => handleDownload('mandatory')}
@@ -116,7 +111,7 @@ export const DownloadModal = memo(({ isOpen, onClose }: DownloadModalProps) => {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">OPTIONAL</span>
-                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">27 MODS</span>
+                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">29 MODS</span>
                                 </div>
                                 <PixelButton 
                                     onClick={() => handleDownload('optional')}
