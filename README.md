@@ -6,7 +6,7 @@
 
 **A Vanilla+ Minecraft Experience with 274 Carefully Selected Mods**
 
-[![Website](https://img.shields.io/badge/Website-Live-55FF55?style=for-the-badge&logo=react)](https://llunarstack.github.io/Lithic_Prime_SMP/)
+[![Website](https://img.shields.io/badge/Website-Live-55FF55?style=for-the-badge&logo=react)](https://lithic-prime-smp.vercel.app/)
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11-FF5555?style=for-the-badge&logo=minecraft)](https://www.minecraft.net/)
 [![Fabric](https://img.shields.io/badge/Fabric-Loader-55FFFF?style=for-the-badge)](https://fabricmc.net/)
 [![License](https://img.shields.io/badge/License-MIT-FFD700?style=for-the-badge)](LICENSE)
@@ -14,6 +14,8 @@
 *Forge your legacy in a world transformed*
 
 [🎮 Join Server](#-join-the-server) • [📦 Download Mods](#-download-modpack) • [📖 Documentation](#-features) • [🤝 Contributing](#-contributing)
+
+**🌐 Live Site:** [lithic-prime-smp.vercel.app](https://lithic-prime-smp.vercel.app/)
 
 </div>
 
@@ -47,7 +49,7 @@ play.lithicprime.com
 
 ### How to Join
 
-1. **Apply for Whitelist** - Visit our [website](https://llunarstack.github.io/Lithic_Prime_SMP/) and fill out the application
+1. **Apply for Whitelist** - Visit our [website](https://lithic-prime-smp.vercel.app/) and fill out the application
 2. **Download the Modpack** - Get the mandatory mods (optional mods recommended)
 3. **Install Fabric Loader** - Version 1.21.11
 4. **Connect & Play!**
@@ -177,7 +179,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact & Links
 
-- 🌐 **Website:** [lithicprime.com](https://llunarstack.github.io/Lithic_Prime_SMP/)
+- 🌐 **Website:** [lithic-prime-smp.vercel.app](https://lithic-prime-smp.vercel.app/)
 - 🎮 **Server:** `play.lithicprime.com`
 - 💬 **Discord:** [Join our community](#) *(coming soon)*
 
