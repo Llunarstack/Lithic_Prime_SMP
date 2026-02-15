@@ -1,8 +1,13 @@
 import { memo } from 'react';
 import { PixelCard } from './ui/PixelCard';
+import { PixelButton } from './ui/PixelButton';
 import { Heart, Shield, AlertTriangle, Users, Hammer, Cpu } from 'lucide-react';
 
-export const RulesSection = memo(() => {
+interface RulesSectionProps {
+    onJoinWhitelist: () => void;
+}
+
+export const RulesSection = memo<RulesSectionProps>(({ onJoinWhitelist }) => {
     return (
         <section id="rules" className="max-w-[1200px] mx-auto px-4 py-20 relative z-10">
             <div className="text-center mb-8 sm:mb-12">
@@ -94,6 +99,19 @@ export const RulesSection = memo(() => {
                         </li>
                     </ul>
                 </PixelCard>
+            </div>
+
+            {/* Join Whitelist Button */}
+            <div className="mt-12 text-center">
+                <PixelButton 
+                    onClick={onJoinWhitelist}
+                    className="min-w-[280px] transition-transform hover:-translate-y-1 flex items-center justify-center gap-3 !bg-[#00AA00] hover:!bg-[#00CC00] !border-[#003300] text-xl py-4"
+                    style={{ boxShadow: 'inset 2px 2px 0 #00DD00, inset -2px -2px 0 #004400' }}
+                >
+                    <Users size={24} />
+                    Join Whitelist
+                </PixelButton>
+                <p className="text-[#888] text-sm mt-4 font-pixel">Ready to start your adventure?</p>
             </div>
         </section>
     );

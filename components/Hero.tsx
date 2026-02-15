@@ -1,19 +1,16 @@
-import { memo, useState, useCallback } from 'react';
+import { memo, useState } from 'react';
 import { PixelButton } from './ui/PixelButton';
-import { Download, Users } from 'lucide-react';
-import { WhitelistModal } from './WhitelistModal';
+import { Download } from 'lucide-react';
 import { DownloadModal } from './DownloadModal';
 import { Lantern } from './Lantern';
 
 export const Hero = memo(() => {
-    const [showWhitelistModal, setShowWhitelistModal] = useState(false);
     const [showDownloadModal, setShowDownloadModal] = useState(false);
 
     return (
         <section className="relative min-h-[80vh] sm:min-h-[90vh] flex flex-col items-center justify-center p-4 sm:p-6 text-center overflow-hidden">
             
             <Lantern />
-            <WhitelistModal isOpen={showWhitelistModal} onClose={() => setShowWhitelistModal(false)} />
             <DownloadModal isOpen={showDownloadModal} onClose={() => setShowDownloadModal(false)} />
 
             {/* Dark Vignette Overlay */}
@@ -61,17 +58,6 @@ export const Hero = memo(() => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16 items-stretch sm:items-center w-full sm:w-auto px-2">
-                    
-                    {/* Join Whitelist Button - Prominent */}
-                    <PixelButton 
-                        onClick={() => setShowWhitelistModal(true)}
-                        className="w-full sm:w-auto min-w-[200px] sm:min-w-[220px] transition-transform hover:-translate-y-1 flex items-center justify-center gap-2 !bg-[#00AA00] hover:!bg-[#00CC00] !border-[#003300] text-base sm:text-xl"
-                        style={{ boxShadow: 'inset 2px 2px 0 #00DD00, inset -2px -2px 0 #004400' }}
-                    >
-                         <Users size={20} className="sm:w-6 sm:h-6" />
-                         Join Whitelist
-                    </PixelButton>
-
                     <PixelButton 
                         variant="secondary" 
                         className="flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto min-w-[200px] transition-transform hover:-translate-y-1 text-base sm:text-xl" 

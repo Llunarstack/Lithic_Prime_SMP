@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { Hero } from './components/Hero';
 import { RulesSection } from './components/RulesSection';
 import { CherryBlossomCursor } from './components/CherryBlossomCursor';
+import { WhitelistModal } from './components/WhitelistModal';
 
 export default function App() {
+  const [showWhitelistModal, setShowWhitelistModal] = useState(false);
+
   return (
     <div className="min-h-screen relative overflow-x-hidden">
       {/* Pixel Art Background */}
@@ -37,6 +41,7 @@ export default function App() {
 
       <div className="relative z-10">
         <CherryBlossomCursor />
+        <WhitelistModal isOpen={showWhitelistModal} onClose={() => setShowWhitelistModal(false)} />
         <Hero />
         
         {/* Texture Divider */}
@@ -45,7 +50,7 @@ export default function App() {
         </div>
 
         <main className="relative shadow-[inset_0_10px_50px_rgba(0,0,0,0.5)]">
-          <RulesSection />
+          <RulesSection onJoinWhitelist={() => setShowWhitelistModal(true)} />
         </main>
 
         <footer className="bg-[#0a0a0a] text-stone-500 py-16 text-center border-t-[4px] border-[#333] relative z-30 overflow-hidden">
