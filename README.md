@@ -88,7 +88,7 @@ Choose your preferred download option:
 
 ### 🎨 Website Features
 
-- **Interactive Mod Browser** - Search and filter through all 274 mods
+- **Interactive Mod Browser** - Search and filter through all 250 mods
 - **AI-Powered Whitelist** - Automated application review system
 - **Responsive Design** - Beautiful pixel-art themed UI
 - **Download Manager** - Easy access to all modpack versions
