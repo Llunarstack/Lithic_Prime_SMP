@@ -13,8 +13,15 @@ export const Hero = memo(() => {
             <Lantern />
             <DownloadModal isOpen={showDownloadModal} onClose={() => setShowDownloadModal(false)} />
 
-            {/* Dark Vignette Overlay */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#121212_90%)] z-10 pointer-events-none"></div>
+            {/* Epic Radial Gradient Overlay */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(18,18,18,0.8)_70%,#121212_100%)] z-10 pointer-events-none"></div>
+            
+            {/* Animated light rays */}
+            <div className="absolute inset-0 z-5 pointer-events-none opacity-20">
+                <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-[#55FF55] to-transparent animate-pulse" style={{ animationDuration: '3s' }}></div>
+                <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-[#87CEEB] to-transparent animate-pulse" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
+                <div className="absolute top-0 left-2/3 w-1 h-full bg-gradient-to-b from-[#FF69B4] to-transparent animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
+            </div>
             
             {/* Minecraft Block Pattern Background */}
             <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none" style={{
@@ -34,21 +41,21 @@ export const Hero = memo(() => {
                     />
                 </div>
                 
-                {/* Updated Tagline with Minecraft Border */}
-                <div className="relative bg-[#121212]/80 backdrop-blur-sm p-4 sm:p-6 md:p-8 border-4 border-[#333] rounded-sm max-w-4xl mb-8 sm:mb-12 shadow-[0_0_50px_rgba(0,0,0,0.8)]" style={{
-                    boxShadow: 'inset 2px 2px 0 rgba(255,255,255,0.1), inset -2px -2px 0 rgba(0,0,0,0.5), 0 0 50px rgba(0,0,0,0.8)'
+                {/* Updated Tagline with Epic Minecraft Border */}
+                <div className="relative bg-gradient-to-b from-[#1a1a1a]/90 to-[#0a0a0a]/90 backdrop-blur-sm p-4 sm:p-6 md:p-8 border-4 border-[#444] rounded-sm max-w-4xl mb-8 sm:mb-12 shadow-[0_0_60px_rgba(85,255,85,0.2)] hover:shadow-[0_0_80px_rgba(85,255,85,0.3)] transition-all duration-500" style={{
+                    boxShadow: 'inset 2px 2px 0 rgba(255,255,255,0.15), inset -2px -2px 0 rgba(0,0,0,0.7), 0 0 60px rgba(85,255,85,0.2)'
                 }}>
-                    {/* Corner decorations */}
-                    <div className="absolute top-0 left-0 w-4 h-4 bg-[#55FF55] opacity-50" style={{
+                    {/* Epic corner decorations with glow */}
+                    <div className="absolute top-0 left-0 w-6 h-6 bg-[#55FF55] opacity-70 shadow-[0_0_10px_#55FF55]" style={{
                         clipPath: 'polygon(0 0, 100% 0, 0 100%)'
                     }}></div>
-                    <div className="absolute top-0 right-0 w-4 h-4 bg-[#55FF55] opacity-50" style={{
+                    <div className="absolute top-0 right-0 w-6 h-6 bg-[#55FF55] opacity-70 shadow-[0_0_10px_#55FF55]" style={{
                         clipPath: 'polygon(100% 0, 100% 100%, 0 0)'
                     }}></div>
-                    <div className="absolute bottom-0 left-0 w-4 h-4 bg-[#55FF55] opacity-50" style={{
+                    <div className="absolute bottom-0 left-0 w-6 h-6 bg-[#55FF55] opacity-70 shadow-[0_0_10px_#55FF55]" style={{
                         clipPath: 'polygon(0 0, 0 100%, 100% 100%)'
                     }}></div>
-                    <div className="absolute bottom-0 right-0 w-4 h-4 bg-[#55FF55] opacity-50" style={{
+                    <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#55FF55] opacity-70 shadow-[0_0_10px_#55FF55]" style={{
                         clipPath: 'polygon(100% 0, 100% 100%, 0 100%)'
                     }}></div>
                     
@@ -60,7 +67,7 @@ export const Hero = memo(() => {
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-12 sm:mb-16 items-stretch sm:items-center w-full sm:w-auto px-2">
                     <PixelButton 
                         variant="secondary" 
-                        className="flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto min-w-[200px] transition-transform hover:-translate-y-1 text-base sm:text-xl" 
+                        className="flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto min-w-[240px] transition-all hover:scale-105 hover:-translate-y-2 text-base sm:text-xl shadow-[0_0_20px_rgba(85,255,255,0.3)] hover:shadow-[0_0_40px_rgba(85,255,255,0.5)]" 
                         onClick={() => setShowDownloadModal(true)}
                     >
                         <Download size={20} className="sm:w-6 sm:h-6" />

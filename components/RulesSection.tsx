@@ -11,15 +11,15 @@ export const RulesSection = memo<RulesSectionProps>(({ onJoinWhitelist }) => {
     return (
         <section id="rules" className="max-w-[1200px] mx-auto px-4 py-20 relative z-10">
             <div className="text-center mb-8 sm:mb-12">
-                <h2 className="font-pixel text-3xl sm:text-4xl md:text-5xl text-white mb-4 drop-shadow-[4px_4px_0_#000]">Server Rules</h2>
-                <div className="inline-block bg-[#aa0000] border-2 border-[#550000] px-4 sm:px-6 py-2 text-[#ffaaaa] font-pixel text-base sm:text-xl shadow-[4px_4px_0_rgba(0,0,0,0.5)]">
+                <h2 className="font-pixel text-3xl sm:text-4xl md:text-5xl text-white mb-4 drop-shadow-[4px_4px_0_#000] animate-pulse">Server Rules</h2>
+                <div className="inline-block bg-gradient-to-r from-[#aa0000] to-[#cc0000] border-2 border-[#550000] px-4 sm:px-6 py-2 text-[#ffaaaa] font-pixel text-base sm:text-xl shadow-[4px_4px_0_rgba(0,0,0,0.5),0_0_20px_rgba(170,0,0,0.5)]">
                     Read Before Joining
                 </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* General Community Rules */}
-                <PixelCard className="h-full">
+                <PixelCard className="h-full hover:shadow-[0_0_30px_rgba(85,255,85,0.2)] transition-all duration-300 hover:scale-[1.02]">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8 border-b-2 border-[#333] pb-4">
                         <Users size={28} className="sm:w-8 sm:h-8 text-[#55FF55]" />
                         <h3 className="font-pixel text-2xl sm:text-3xl text-[#E0E0E0]">Community Guidelines</h3>
@@ -57,7 +57,7 @@ export const RulesSection = memo<RulesSectionProps>(({ onJoinWhitelist }) => {
                 </PixelCard>
 
                 {/* Mod Specific Rules */}
-                <PixelCard className="h-full">
+                <PixelCard className="h-full hover:shadow-[0_0_30px_rgba(255,170,0,0.2)] transition-all duration-300 hover:scale-[1.02]">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8 border-b-2 border-[#333] pb-4">
                         <Hammer size={28} className="sm:w-8 sm:h-8 text-[#FFAA00]" />
                         <h3 className="font-pixel text-2xl sm:text-3xl text-[#E0E0E0]">Mod Protocols</h3>
@@ -101,17 +101,30 @@ export const RulesSection = memo<RulesSectionProps>(({ onJoinWhitelist }) => {
                 </PixelCard>
             </div>
 
-            {/* Join Whitelist Button */}
-            <div className="mt-12 text-center">
-                <PixelButton 
-                    onClick={onJoinWhitelist}
-                    className="min-w-[280px] transition-transform hover:-translate-y-1 flex items-center justify-center gap-3 !bg-[#00AA00] hover:!bg-[#00CC00] !border-[#003300] text-xl py-4"
-                    style={{ boxShadow: 'inset 2px 2px 0 #00DD00, inset -2px -2px 0 #004400' }}
-                >
-                    <Users size={24} />
-                    Join Whitelist
-                </PixelButton>
-                <p className="text-[#888] text-sm mt-4 font-pixel">Ready to start your adventure?</p>
+            {/* Join Whitelist Button - Epic Call to Action */}
+            <div className="mt-16 text-center relative">
+                {/* Glowing background effect */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-[400px] h-[400px] bg-[#00AA00] opacity-10 blur-[100px] animate-pulse"></div>
+                </div>
+                
+                <div className="relative">
+                    <h3 className="font-pixel text-3xl sm:text-4xl text-white mb-4 drop-shadow-[4px_4px_0_#000] animate-pulse">
+                        Begin Your Journey
+                    </h3>
+                    <p className="text-[#AAA] text-lg mb-6 font-pixel max-w-2xl mx-auto">
+                        The realm awaits. Will you answer the call?
+                    </p>
+                    
+                    <PixelButton 
+                        onClick={onJoinWhitelist}
+                        className="inline-flex min-w-[300px] transition-all hover:scale-110 hover:-translate-y-2 items-center justify-center gap-3 !bg-[#00AA00] hover:!bg-[#00DD00] !border-[#003300] text-2xl py-5 animate-bounce-subtle shadow-[0_0_30px_rgba(0,170,0,0.5)] hover:shadow-[0_0_50px_rgba(0,221,0,0.8)]"
+                        style={{ boxShadow: 'inset 2px 2px 0 #00DD00, inset -2px -2px 0 #004400, 0 0 30px rgba(0,170,0,0.5)' }}
+                    >
+                        <Users size={28} />
+                        Join the Adventure
+                    </PixelButton>
+                </div>
             </div>
         </section>
     );
