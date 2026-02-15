@@ -118,6 +118,7 @@ const knownMods: Record<string, { name?: string, description?: string, category?
     "reeses-sodium-options": { name: "Reese's Sodium Options", description: "Improved Sodium options menu.", category: ModCategory.QOL, isOptional: true },
     "shulkerboxtooltip": { name: "Shulker Box Tooltip", description: "View shulker box contents in tooltips.", category: ModCategory.QOL, isOptional: true },
     "sodium": { name: "Sodium", description: "Modern rendering engine for high FPS.", category: ModCategory.PERFORMANCE, isOptional: true },
+    "sodium-extra": { name: "Sodium Extra", description: "Extra settings for Sodium.", category: ModCategory.QOL, isOptional: true },
     "sound-physics-remastered": { name: "Sound Physics", description: "Realistic sound attenuation and reverberation.", category: ModCategory.VISUAL, isOptional: true },
     "spark": { name: "Spark", description: "Performance profiling tool.", category: ModCategory.CORE },
     "stellarity": { name: "Stellarity", description: "Visual and gameplay overhaul for the End.", category: ModCategory.WORLD_GEN },

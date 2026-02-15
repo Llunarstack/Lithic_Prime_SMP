@@ -18,6 +18,7 @@ $optionalMods = @(
     "*reeses-sodium-options*",
     "*shulkerboxtooltip*",
     "*sodium*",
+    "*sodium-extra*",
     "*sound-physics-remastered*",
     "*visuality*",
     "*effectinsights*",
