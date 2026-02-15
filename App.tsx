@@ -59,7 +59,6 @@ export default function App() {
           
           <div className="max-w-4xl mx-auto px-4 relative">
               <h3 className="font-pixel text-3xl text-[#555] mb-6 tracking-widest uppercase">Lithic Prime SMP</h3>
-              <p className="mb-8 text-sm opacity-60">Not affiliated with Mojang Studios.</p>
               <div className="flex justify-center gap-8 text-sm font-bold uppercase tracking-widest">
                   <a href="#" className="hover:text-[#55FF55] transition-colors hover:underline">Discord</a>
                   <a href="#rules" className="hover:text-[#55FF55] transition-colors hover:underline">Rules</a>

@@ -16,13 +16,6 @@ export const Hero = memo(() => {
             {/* Epic Radial Gradient Overlay */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(18,18,18,0.8)_70%,#121212_100%)] z-10 pointer-events-none"></div>
             
-            {/* Animated light rays */}
-            <div className="absolute inset-0 z-5 pointer-events-none opacity-20">
-                <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-[#55FF55] to-transparent animate-pulse" style={{ animationDuration: '3s' }}></div>
-                <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-[#87CEEB] to-transparent animate-pulse" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
-                <div className="absolute top-0 left-2/3 w-1 h-full bg-gradient-to-b from-[#FF69B4] to-transparent animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
-            </div>
-            
             {/* Minecraft Block Pattern Background */}
             <div className="absolute inset-0 opacity-[0.02] z-0 pointer-events-none" style={{
                 backgroundImage: `repeating-linear-gradient(0deg, #555 0px, #555 16px, transparent 16px, transparent 32px),
