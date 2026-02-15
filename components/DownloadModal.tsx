@@ -59,7 +59,7 @@ export const DownloadModal = memo(({ isOpen, onClose }: DownloadModalProps) => {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">ALL MODS</span>
-                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">245 MANDATORY + 29 OPTIONAL</span>
+                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">223 MANDATORY + 27 OPTIONAL</span>
                                 </div>
                                 <PixelButton 
                                     onClick={() => handleDownload('full')}
@@ -85,7 +85,7 @@ export const DownloadModal = memo(({ isOpen, onClose }: DownloadModalProps) => {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">REQUIRED</span>
-                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">245 MODS</span>
+                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">223 MODS</span>
                                 </div>
                                 <PixelButton 
                                     onClick={() => handleDownload('mandatory')}
@@ -111,7 +111,7 @@ export const DownloadModal = memo(({ isOpen, onClose }: DownloadModalProps) => {
                                 </p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">OPTIONAL</span>
-                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">29 MODS</span>
+                                    <span className="px-3 py-1 bg-[#111] border border-[#333] text-[#888] text-sm font-pixel">27 MODS</span>
                                 </div>
                                 <PixelButton 
                                     onClick={() => handleDownload('optional')}

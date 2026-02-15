@@ -4,7 +4,7 @@
 
 # 🌸 Lithic Prime SMP
 
-**A Vanilla+ Minecraft Experience with 274 Carefully Selected Mods**
+**A Vanilla+ Minecraft Experience with 250 Carefully Selected Mods**
 
 [![Website](https://img.shields.io/badge/Website-Live-55FF55?style=for-the-badge&logo=react)](https://lithic-prime-smp.vercel.app/)
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11-FF5555?style=for-the-badge&logo=minecraft)](https://www.minecraft.net/)
@@ -33,8 +33,8 @@
 
 ### 📊 Modpack Stats
 
-- **245 Mandatory Mods** - Core gameplay enhancements
-- **29 Optional Mods** - Performance and visual improvements
+- **223 Mandatory Mods** - Core gameplay enhancements
+- **27 Optional Mods** - Performance and visual improvements
 - **Minecraft Version:** 1.21.11
 - **Loader:** Fabric
 
@@ -70,9 +70,9 @@ Choose your preferred download option:
 
 | Pack Type | Mods | Size | Download |
 |-----------|------|------|----------|
-| **Full Pack** | 274 mods | ~555 MB | [Download](https://mega.nz/file/vBVzHYZS#MuUzhn55dI9PBjOTfaKSmVH699TkhSLDL8ljlBhZwyU) |
-| **Mandatory** | 245 mods | ~503 MB | [Download](https://mega.nz/file/DcVzgCqR#cZ36tTnfJDxupHOjb6Mq5pxbiCRHArGhVZ_twh8pObY) |
-| **Optional** | 29 mods | ~26 MB | [Download](https://mega.nz/file/7d0iXSwC#2HioNptZgWJoqAdGO3V616vWkNmLExPsPqeYSFiWo9Q) |
+| **Full Pack** | 250 mods | ~TBD MB | [Upload to Mega.nz](#) |
+| **Mandatory** | 223 mods | ~TBD MB | [Upload to Mega.nz](#) |
+| **Optional** | 27 mods | ~TBD MB | [Upload to Mega.nz](#) |
 
 ### Installation
 

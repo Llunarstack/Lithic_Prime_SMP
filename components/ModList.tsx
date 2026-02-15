@@ -69,13 +69,13 @@ export const ModList = memo(() => {
                              <label className="block text-[#aaa] font-pixel text-lg mb-2 uppercase tracking-wide">Filter by Importance</label>
                              <div className="flex flex-wrap gap-3">
                                 <PixelButton onClick={() => setFilterType('all')} isActive={filterType === 'all'}>
-                                    ALL MODS (274)
+                                    ALL MODS (250)
                                 </PixelButton>
                                 <PixelButton onClick={() => setFilterType('mandatory')} isActive={filterType === 'mandatory'}>
-                                    MANDATORY (245)
+                                    MANDATORY (223)
                                 </PixelButton>
                                 <PixelButton onClick={() => setFilterType('optional')} isActive={filterType === 'optional'}>
-                                    OPTIONAL (29)
+                                    OPTIONAL (27)
                                 </PixelButton>
                             </div>
                         </div>
