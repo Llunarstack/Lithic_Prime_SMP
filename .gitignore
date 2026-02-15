@@ -26,3 +26,6 @@ dist-ssr
 
 # Large downloads
 public/downloads/*.zip
+
+.vercel
+.env*.local
