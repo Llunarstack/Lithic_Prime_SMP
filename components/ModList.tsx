@@ -39,7 +39,7 @@ export const ModList = memo(() => {
             <div className="mb-8 sm:mb-12 text-center select-none">
                 <h2 className="font-pixel text-3xl sm:text-4xl md:text-5xl text-white mb-2 drop-shadow-[4px_4px_0_#000]">Mod Collection</h2>
                 <div className="inline-block bg-[#333] border-2 border-[#111] px-3 sm:px-4 py-1 text-[#aaa] font-pixel text-base sm:text-xl">
-                    Library Version 1.21.11
+                    Fabric 1.21.11
                 </div>
             </div>
 
