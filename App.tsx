@@ -1,5 +1,4 @@
 import { Hero } from './components/Hero';
-import { ModList } from './components/ModList';
 import { RulesSection } from './components/RulesSection';
 import { CherryBlossomCursor } from './components/CherryBlossomCursor';
 
@@ -46,11 +45,6 @@ export default function App() {
         </div>
 
         <main className="relative shadow-[inset_0_10px_50px_rgba(0,0,0,0.5)]">
-          <ModList />
-          
-          {/* Divider between Mods and Rules */}
-          <div className="h-2 w-full bg-[#111] my-8 opacity-50"></div>
-          
           <RulesSection />
         </main>
 

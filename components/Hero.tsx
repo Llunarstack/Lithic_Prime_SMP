@@ -8,14 +8,6 @@ import { Lantern } from './Lantern';
 export const Hero = memo(() => {
     const [showWhitelistModal, setShowWhitelistModal] = useState(false);
     const [showDownloadModal, setShowDownloadModal] = useState(false);
-    
-    const scrollToMods = useCallback((e: React.MouseEvent) => {
-        e.preventDefault();
-        const element = document.getElementById('modlist');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    }, []);
 
     return (
         <section className="relative min-h-[80vh] sm:min-h-[90vh] flex flex-col items-center justify-center p-4 sm:p-6 text-center overflow-hidden">
@@ -80,11 +72,6 @@ export const Hero = memo(() => {
                          Join Whitelist
                     </PixelButton>
 
-                     <a href="#modlist" onClick={scrollToMods} className="w-full sm:w-auto">
-                        <PixelButton className="w-full min-w-[200px] transition-transform hover:-translate-y-1 text-base sm:text-xl">
-                            View Modlist
-                        </PixelButton>
-                    </a>
                     <PixelButton 
                         variant="secondary" 
                         className="flex items-center justify-center gap-2 sm:gap-3 w-full sm:w-auto min-w-[200px] transition-transform hover:-translate-y-1 text-base sm:text-xl" 
