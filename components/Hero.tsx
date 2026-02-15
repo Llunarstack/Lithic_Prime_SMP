@@ -2,7 +2,6 @@ import { memo, useState } from 'react';
 import { PixelButton } from './ui/PixelButton';
 import { Download } from 'lucide-react';
 import { DownloadModal } from './DownloadModal';
-import { Lantern } from './Lantern';
 
 export const Hero = memo(() => {
     const [showDownloadModal, setShowDownloadModal] = useState(false);
@@ -10,7 +9,6 @@ export const Hero = memo(() => {
     return (
         <section className="relative min-h-[80vh] sm:min-h-[90vh] flex flex-col items-center justify-center p-4 sm:p-6 text-center overflow-hidden">
             
-            <Lantern />
             <DownloadModal isOpen={showDownloadModal} onClose={() => setShowDownloadModal(false)} />
 
             {/* Epic Radial Gradient Overlay */}

@@ -104,7 +104,7 @@ export const RulesSection = memo<RulesSectionProps>(({ onJoinWhitelist }) => {
             {/* Join Whitelist Button - Epic Call to Action */}
             <div className="mt-16 text-center relative">
                 <div className="relative">
-                    <h3 className="font-pixel text-3xl sm:text-4xl text-white mb-4 drop-shadow-[4px_4px_0_#000] animate-pulse">
+                    <h3 className="font-pixel text-3xl sm:text-4xl text-white mb-4 drop-shadow-[4px_4px_0_#000]">
                         Begin Your Journey
                     </h3>
                     <p className="text-[#AAA] text-lg mb-6 font-pixel max-w-2xl mx-auto">
@@ -113,7 +113,7 @@ export const RulesSection = memo<RulesSectionProps>(({ onJoinWhitelist }) => {
                     
                     <PixelButton 
                         onClick={onJoinWhitelist}
-                        className="inline-flex min-w-[300px] transition-all hover:scale-110 hover:-translate-y-2 items-center justify-center gap-3 !bg-[#00AA00] hover:!bg-[#00DD00] !border-[#003300] text-2xl py-5 animate-bounce-subtle"
+                        className="inline-flex min-w-[300px] transition-all hover:scale-105 hover:-translate-y-1 items-center justify-center gap-3 !bg-[#00AA00] hover:!bg-[#00DD00] !border-[#003300] text-2xl py-5"
                         style={{ boxShadow: 'inset 2px 2px 0 #00DD00, inset -2px -2px 0 #004400' }}
                     >
                         <Users size={28} />
