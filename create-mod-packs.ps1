@@ -5,8 +5,6 @@ $outputPath = "public\downloads"
 
 # Optional mods (based on isOptional: true in modService.ts)
 $optionalMods = @(
-    "*betterf3*",
-    "*capes*",
     "*continuity*",
     "*dark-loading-screen*",
     "*ferritecore*",
@@ -22,7 +20,6 @@ $optionalMods = @(
     "*sodium*",
     "*sound-physics-remastered*",
     "*visuality*",
-    "*zoomify*",
     "*effectinsights*",
     "*fast-chest*",
     "*fastquit*",
@@ -30,7 +27,6 @@ $optionalMods = @(
     "*itemswapper*",
     "*lambdabettergrass*",
     "*pickupnotifier*",
-    "*skinlayers3d*",
     "*trashslot*",
     "*smoothscroll*",
     "*stfu*",
